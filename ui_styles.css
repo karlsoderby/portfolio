@@ -372,4 +372,6 @@ i {
     margin-bottom: 30px;
   }
   
-  
+  #id01, #id02, #id03 {
+    font-size: 1.5em;
+  }

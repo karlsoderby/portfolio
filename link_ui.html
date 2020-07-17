@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
     <link href="ui_styles.css" rel="stylesheet" type="text/css">
+    
+<script type="text/javascript" src=script.js></script>
     <style>
         body {
             height: 200%;
@@ -32,30 +34,38 @@
             <br><br><br>
             <h1>
                 Welcome back Karl!
-            </h1>        
-            
-            <a  class="white-link"href="https://time.is/Malmo" id="time_is_link" rel="nofollow" style="font-size:36px"></a>
+            </h1>
+
+            <a class="white-link" href="https://time.is/Malmo" id="time_is_link" rel="nofollow"
+                ></a>
             <span id="Malmo_z72a" style="font-size:36px"></span>
             <br><br>
             <script src="//widget.time.is/t.js"></script>
             <script>
-            time_is_widget.init({Malmo_z72a:{}});
+                time_is_widget.init({ Malmo_z72a: {} });
             </script>
-            
-            
-            <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
-                <input  name="sitesearch" type="hidden">
-                <input class="searchbar" autocomplete="on" class="form-control search" name="q" placeholder="Search google" required="required"  type="text">
+
+
+            <form action="https://www.google.com/search" class="searchform" method="get" name="searchform"
+                target="_blank">
+                <input name="sitesearch" type="hidden">
+                <input class="searchbar" autocomplete="on" class="form-control search" name="q"
+                    placeholder="Search google" required="required" type="text">
                 <button class="button1" type="submit">Search</button>
-                </form>
-               
-              <!--  <iframe frameborder="0"  scrolling="yes" width="540" height="200" src="https://www.fctables.com/england/premier-league/iframe/?type=table&lang_id=2&country=67&template=10&team=&timezone=Europe/Stockholm&time=24&po=1&ma=1&wi=1&dr=1&los=1&gf=1&ga=1&gd=1&pts=1&ng=1&form=1&width=520&height=700&font=Arial&fs=12&lh=22&bg=FFFFFF&fc=333333&logo=1&tlink=1&ths=1&thb=1&thba=FFFFFF&thc=000000&bc=dddddd&hob=f5f5f5&hobc=ebe7e7&lc=333333&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF"></iframe> -->
-           
+            </form>
+
+            <!--  <iframe frameborder="0"  scrolling="yes" width="540" height="200" src="https://www.fctables.com/england/premier-league/iframe/?type=table&lang_id=2&country=67&template=10&team=&timezone=Europe/Stockholm&time=24&po=1&ma=1&wi=1&dr=1&los=1&gf=1&ga=1&gd=1&pts=1&ng=1&form=1&width=520&height=700&font=Arial&fs=12&lh=22&bg=FFFFFF&fc=333333&logo=1&tlink=1&ths=1&thb=1&thba=FFFFFF&thc=000000&bc=dddddd&hob=f5f5f5&hobc=ebe7e7&lc=333333&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF"></iframe> -->
+
+
+            <h1>Quotes of the day</h1>
+            <p id="id01"></p>
             
-         
-           
-                <br><br>
-            
+            <!--<p id="id02"></p>
+
+            <p id="id03"></p>-->
+
+            <br><br>
+
             <div class="bread-text">
 
             </div>
@@ -67,8 +77,9 @@
 
 
             <div class="row">
-                <div class="img-color" onclick="window.location.href='https://arduino.atlassian.net/'" target="_blank">
-                    <img src="https://seeklogo.com/images/C/confluence-logo-D9B07137C2-seeklogo.com.png" alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://arduino.atlassian.net/', '_blank');" >
+                    <img src="https://seeklogo.com/images/C/confluence-logo-D9B07137C2-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
                     <h2>Confluence</h2>
                 </div>
 
@@ -77,8 +88,9 @@
 
 
 
-                <div class="img-color" onclick="window.location.href='https://create.arduino.cc/iot/'">
-                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png"   alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://create.arduino.cc/iot/', '_blank');">
+                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
                     <h2>IoT cloud</h2>
 
                 </div>
@@ -88,8 +100,9 @@
 
 
 
-                <div class="img-color" onclick="window.location.href='https://create.arduino.cc/'">
-                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png"  alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://create.arduino.cc/', '_blank');">
+                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
                     <h2>Create IDE</h2>
                 </div>
 
@@ -97,8 +110,9 @@
 
 
 
-                <div class="img-color" onclick="window.location.href='https://github.com/'">
-                    <img src="https://seeklogo.com/images/G/github-logo-5F384D0265-seeklogo.com.png" alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://github.com/', '_blank');">
+                    <img src="https://seeklogo.com/images/G/github-logo-5F384D0265-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
 
                     <h2>GitHub</h2>
                 </div>
@@ -106,15 +120,17 @@
 
 
 
-                <div class="img-color" onclick="window.location.href='https://drive.google.com/drive/u/0/my-drive'">
-                    <img src="https://seeklogo.com/images/G/google-drive-logo-C66555C645-seeklogo.com.png" alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://drive.google.com/drive/u/0/my-drive', '_blank');">
+                    <img src="https://seeklogo.com/images/G/google-drive-logo-C66555C645-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
                     <h2>Google Drive</h2>
                 </div>
 
 
 
-                <div class="img-color" onclick="window.location.href='https://calendar.google.com/calendar/r'">
-                    <img src="https://seeklogo.com/images/G/google-calendar-logo-8594DB460D-seeklogo.com.png" alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://calendar.google.com/calendar/r', '_blank');">
+                    <img src="https://seeklogo.com/images/G/google-calendar-logo-8594DB460D-seeklogo.com.png"
+                        alt="Paris" width="100" height="200">
 
                     <h2>Calendar</h2>
                 </div>
@@ -123,8 +139,9 @@
             </div>
 
             <div class="row">
-                <div class="img-color" onclick="window.location.href='https://store.arduino.cc/'">
-                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png"  alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://store.arduino.cc/', '_blank');">
+                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
                     <h2>Arduino Store</h2>
                 </div>
 
@@ -133,8 +150,9 @@
 
 
 
-                <div class="img-color" onclick="window.location.href='https://mail.google.com/'">
-                    <img src="https://seeklogo.com/images/G/gmail-icon-logo-9ADB17D3F3-seeklogo.com.png"   alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://mail.google.com/', '_blank');">
+                    <img src="https://seeklogo.com/images/G/gmail-icon-logo-9ADB17D3F3-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
                     <h2>Gmail</h2>
 
                 </div>
@@ -144,8 +162,9 @@
 
 
 
-                <div class="img-color" onclick="window.location.href='https://www.arduino.cc/reference/en/'">
-                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png"   alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://www.arduino.cc/reference/en/', '_blank');">
+                    <img src="https://seeklogo.com/images/A/arduino-logo-BC7CBC1DAA-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
                     <h2>Reference</h2>
                 </div>
 
@@ -153,8 +172,9 @@
 
 
 
-                <div class="img-color" onclick="window.location.href='https://medium.com/topic/visual-design'">
-                    <img src="https://seeklogo.com/images/M/medium-logo-93CDCF6451-seeklogo.com.png" alt="Paris" width="100" height="200">
+                <div class="img-color" onclick="window.open('https://medium.com/topic/visual-design', '_blank');">
+                    <img src="https://seeklogo.com/images/M/medium-logo-93CDCF6451-seeklogo.com.png" alt="Paris"
+                        width="100" height="200">
 
                     <h2>Medium</h2>
                 </div>
