@@ -33,6 +33,11 @@ h1 {
   letter-spacing: 2px;
 }
 
+.project-section {
+  margin-top: 50px;
+  width: 90%;
+}
+
 h2 {
   font-size: 2.5rem;
   font-family: 'Barlow', sans-serif;
@@ -95,8 +100,31 @@ h1 {
   letter-spacing: 3px;
 }
 
+
+.intro-logo {
+  display: inline-block;
+  width: 45%;
+  height: auto;
+}
+
+.bread-text-full {
+  
+  letter-spacing: 1px;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: justify;
+}
+
 .bread-text {
-  float: left;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+  width: 45%;
+  text-align: justify;
+}
+
+.bread-text-main {
+  
   letter-spacing: 1px;
   font-size: 1.5em;
   width: 90%;
@@ -186,8 +214,8 @@ h1 {
   margin-left: 10px;
 }
 
-.orange {
-  color: #ff7f00;
+.yellow {
+  color: #f4da01;
 }
 
 .text-overlay {
