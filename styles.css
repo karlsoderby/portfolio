@@ -36,6 +36,7 @@ h1 {
 .project-section {
   margin-top: 50px;
   width: 90%;
+  display: inline-block;
 }
 
 h2 {
@@ -103,7 +104,13 @@ h1 {
 
 .intro-logo {
   display: inline-block;
-  width: 45%;
+  width: 600px;
+  height: auto;
+}
+
+.intro-logo-small {
+  display: inline-block;
+  width: 400px;
   height: auto;
 }
 
@@ -116,10 +123,11 @@ h1 {
 }
 
 .bread-text {
+  
   display: inline-block;
   letter-spacing: 1px;
   font-size: 1.5em;
-  width: 45%;
+  width: 600px;
   text-align: justify;
 }
 
@@ -277,7 +285,7 @@ h1 {
     width: 90%;
   }
   .bread-text {
-    float: left;
+    
     letter-spacing: 1px;
     font-size: 1.2em;
     width: 90%;
@@ -298,6 +306,22 @@ h1 {
   .dropdown {
     visibility: visible;
   }
+
+  h1 {
+   font-size: 2em;
+  }
+
+  .intro-logo {
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .intro-logo-small {
+    display: inline-block;
+    width: 90%;
+    height: auto;
+  }
+
 }
 
 @media screen and (max-width: 1300px) {
