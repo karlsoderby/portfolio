@@ -100,18 +100,18 @@ button:focus {
 
 .red:hover {
     cursor: pointer;
-    background-color: rgb(180, 43, 84);
+    background-color: rgb(243, 31, 250);
     color: white;
 }
 
 .green:hover {
     cursor: pointer;
-    background-color: rgb(28, 163, 96);
+    background-color: rgb(248, 120, 69);
     color: white;
 }
 
 .blue:hover {
     cursor: pointer;
-    background-color: rgb(30, 108, 156);
+    background-color: rgb(66, 225, 253);
     color: white;
 }
