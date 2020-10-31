@@ -94,7 +94,7 @@ button:focus {
 }
 
 
-.red, .green, .blue {
+.red, .green, .blue, .action {
     transition: all 0.2s;
 }
 
@@ -113,5 +113,11 @@ button:focus {
 .blue:hover {
     cursor: pointer;
     background-color: rgb(66, 225, 253);
+    color: white;
+}
+
+.action:hover {
+    cursor: pointer;
+    background-color: rgb(114, 114, 114);
     color: white;
 }
