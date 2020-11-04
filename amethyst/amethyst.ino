@@ -1,12 +1,23 @@
+/* Version 5 
+This version uses a water pump, neopixel and MKR ENV shield.
+*/
+
+
+
 #include <WiFiNINA.h>
 #include <Arduino_MKRENV.h>
 #include <ArduinoGraphics.h>
 #include <Arduino_MKRRGB.h>
+#include <Adafruit_NeoPixel.h>
+
+#define PIN        5 
+#define NUMPIXELS 12 
+
+Adafruit_NeoPixel strip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 
-
-char ssid[] = "The_Shed";             //  your network SSID (name) between the " "
-char pass[] = "ecamlndk";      // your network password between the " "
+char ssid[] = "";             //  your network SSID (name) between the " "
+char pass[] = "";      // your network password between the " "
 int keyIndex = 0;                 // your network key Index number (needed only for WEP)
 int status = WL_IDLE_STATUS;      //connection status
 WiFiServer server(80);            //server socket
@@ -18,7 +29,7 @@ int r = 2;
 int g = 3;
 int b = 4;
 
-int pump = 7;
+int pump = 9;
 
 int temperature;
 int humidity;
@@ -37,14 +48,18 @@ void setup() {
   pinMode(g, OUTPUT);
   pinMode(b, OUTPUT);
   pinMode(pump, OUTPUT);
-  while (!Serial);
+
+  strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
+  strip.show();            // Turn OFF all pixels ASAP
+  strip.setBrightness(0); // Set BRIGHTNESS to about 1/5 (max = 255)
+  
 
   if (!ENV.begin()) {
     Serial.println("Failed to initialize MKR ENV shield!");
     // while (1);
   }
 
-  MATRIX.begin();
+  //MATRIX.begin();
 
   enable_WiFi();
   connect_WiFi();
@@ -56,10 +71,8 @@ void setup() {
 
 void loop() {
   client = server.available();
-  //temperature = ENV.readTemperature();
-  //humidity    = ENV.readHumidity();
-  humidity = 36;
-  temperature = 23;
+  temperature = ENV.readTemperature();
+  humidity    = ENV.readHumidity();
 
   int moistureRaw = analogRead(A1);
   moisture = map(moistureRaw, 0, 1023, 100, 0);
@@ -188,12 +201,12 @@ void printWEB() {
             // old line (working)client.println("<body> <h1>GADGET</h1><br> <p class='center'><a class='center' href=\"/H\">ON</a></p> <br><br> <p class='center'><a href=\"/L\">OFF</a></p> <br><br> <button class='red' type='submit' onmousedown='location.href=\"/H\"'>RED</button> </body>");
 
             client.print("<body><div class='wrap'><h1>GADGET</h1><br><p class='center'>");
-            client.print("<button class='red' type='submit' onmousedown='location.href=\"/T\"'><i class='fas fa-seedling'></i></button><button class='red' type='submit' onmousedown='location.href=\"/O\"'><i class='far fa-lightbulb'></i></button></p><br>");
+            client.print("<button class='action' type='submit' onmousedown='location.href=\"/T\"'><i class='fas fa-seedling'></i></button><button class='action' type='submit' onmousedown='location.href=\"/O\"'><i class='far fa-lightbulb'></i></button></p><br>");
 
             //<p class='text'>This interface is run on an Arduino MKR WiFi 1010 board.</p>
 
             if (change == false) {
-              client.print("<p class='center'><button class='red' type='submit' onmousedown='location.href=\"/R\"'>RED</button><button class='green' type='submit' onmousedown='location.href=\"/G\"'>GREEN</button><button class='blue' type='submit' onmousedown='location.href=\"/B\"'>BLUE</button></p><br>");
+              client.print("<p class='center'><button class='red' type='submit' onmousedown='location.href=\"/R\"'>UV</button><button class='green' type='submit' onmousedown='location.href=\"/G\"'>WARM</button><button class='blue' type='submit' onmousedown='location.href=\"/B\"'>BREEZE</button></p><br>");
               client.print("<p class='center'><button class='small-btn' type='submit' onmousedown='location.href=\"/Y\"'>-</button><button class='small-btn' type='submit' onmousedown='location.href=\"/F\"'><i class='far fa-gem'></i></button><button class='small-btn' type='submit' onmousedown='location.href=\"/X\"'>+</button></p>");
               client.print("<p class='text'>");
               client.print(light_intensity);
@@ -201,7 +214,7 @@ void printWEB() {
               client.print("</p>");
             }
             if (change == true) {
-              client.print("<p class='center'><button class='green' type='submit' onmousedown='location.href=\"/Q\"'><i class='fas fa-faucet'></i></button></p>");
+              client.print("<p class='center'><button class='action' type='submit' onmousedown='location.href=\"/Q\"'><i class='fas fa-faucet'></i></button></p>");
 
 
               client.print("<p class='sensordata'>");
@@ -235,23 +248,25 @@ void printWEB() {
           if (k >= 250) {
             k = 250;
           }
+          strip.setBrightness(k);
           // Serial.print("intensity = ");
           //  Serial.println(k);
         }
 
         if (currentLine.endsWith("GET /Y")) {
           k -= 25;
-
+          
           if (k <= 0) {
             k = 0;
           }
+          strip.setBrightness(k);
           //Serial.print("intensity = ");
           //Serial.println(k);
         }
 
         if (currentLine.endsWith("GET /Q")) {
           analogWrite(pump, 130);
-          delay(1000);
+          delay(1500);
           analogWrite(pump, 0);
         }
 
@@ -284,40 +299,45 @@ void printWEB() {
 
         if (currentLine.endsWith("GET /F")) {
           if (color == 1) {
-            MATRIX.brightness(k);
+         /*   MATRIX.brightness(k);
             MATRIX.beginDraw();
             MATRIX.clear();
             MATRIX.noStroke();
             MATRIX.fill(255, 0, 0);
             MATRIX.rect(0, 0, MATRIX.width(), MATRIX.height());
-            MATRIX.endDraw();
+            MATRIX.endDraw();*/
 
+            colorWipe(strip.Color(255, 0, 255), 50); // UV
+            
             //without RGB matrix
             // analogWrite(r, k);
 
           }
           else if (color == 2) {
-            MATRIX.brightness(k);
+            /*MATRIX.brightness(k);
             MATRIX.beginDraw();
             MATRIX.clear();
             MATRIX.noStroke();
             MATRIX.fill(0, 255, 0);
             MATRIX.rect(0, 0, MATRIX.width(), MATRIX.height());
-            MATRIX.endDraw();
+            MATRIX.endDraw();*/
 
+             colorWipe(strip.Color(255, 100, 40), 50); // Warm
+            
             //without RGB matrix
             //  analogWrite(g, k);
 
           }
           else if (color == 3) {
-            MATRIX.brightness(k);
+          /*  MATRIX.brightness(k);
             MATRIX.beginDraw();
             MATRIX.clear();
             MATRIX.noStroke();
             MATRIX.fill(0, 0, 255);
             MATRIX.rect(0, 0, MATRIX.width(), MATRIX.height());
-            MATRIX.endDraw();
+            MATRIX.endDraw();*/
 
+             colorWipe(strip.Color(  0,   140, 185), 50); // Blue
             //without RGB matrix
             //analogWrite(b, k);
           }
@@ -340,4 +360,12 @@ void printWEB() {
     client.stop();
     //  Serial.println("client disconnected");
   }
+}
+
+void colorWipe(uint32_t color, int wait) {
+  for(int i=0; i<strip.numPixels(); i++) { // For each pixel in strip...
+    strip.setPixelColor(i, color);         //  Set pixel's color (in RAM)
+    strip.show();     
+    delay(wait);  //  Update strip to match
+    }
 }
