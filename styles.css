@@ -33,6 +33,14 @@ h1 {
   letter-spacing: 2px;
 }
 
+h3 {
+  font-size: 2rem;
+  font-family: 'Barlow', sans-serif;
+  font-weight: normal;
+  
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
 .project-section {
   margin-top: 50px;
   width: 90%;
@@ -46,6 +54,7 @@ h2 {
   margin-top: 5px;
   letter-spacing: 5px;
   text-transform: uppercase;
+  color: black;
 }
 
 .footer {
@@ -104,13 +113,13 @@ h1 {
 
 .intro-logo {
   display: inline-block;
-  width: 600px;
+  width: 49%;
   height: auto;
 }
 
 .intro-logo-small {
   display: inline-block;
-  width: 400px;
+  width: 20%;
   height: auto;
 }
 
@@ -127,7 +136,7 @@ h1 {
   display: inline-block;
   letter-spacing: 1px;
   font-size: 1.5em;
-  width: 600px;
+  width: 49%;
   text-align: justify;
 }
 
