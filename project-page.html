@@ -13,6 +13,7 @@
       padding: 0;
       background-color: #697775;
       color: white;
+      transition: 0.2s;
     }
 
     .line {
@@ -30,7 +31,7 @@
   </style>
 </head>
 
-<body>
+<body id="testColor">
   <div class="ui-wrap">
     <div class="ui">
 
@@ -46,6 +47,15 @@
         </div>
       </div>
 
+      <button id="redRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#44a1b8', document.getElementById('testColor').style.color = 'white',changeWhite()">
+      </button>
+      <button id="blueRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#697775', document.getElementById('testColor').style.color = 'white',changeWhite()">
+      </button>
+      <button id="yellowRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#f4da01', document.getElementById('testColor').style.color = 'black',changeBlack(), headerChange()">
+      </button>
       <a href="about.html" class="right">ABOUT</a>
       <a href="#" class="right"><b>WORK</b></a>
       <a href="index.html" class="right">HOME</a>
@@ -69,7 +79,7 @@
 
 
     <br><br><br>
-    <h1>
+    <h1 id="headerChange1">
       <b>TIOTTA</b><br>
       Teaching Internet of Things Through Application
 
@@ -93,9 +103,9 @@
 
 
     <br><br><br><br>
-    <h2 class="project-header">
+    <h2 id="headerChange1" class="project-header">
       Motivation
-      </h1>
+      </h2>
 
       <hr class="line">
 
@@ -121,9 +131,9 @@
 
 
       <br><br><br><br>
-      <h2 class="project-header">
+      <h2 id="headerChange3" class="project-header">
         First iteration
-        </h1>
+        </h2>
 
         <hr class="line">
 
@@ -184,7 +194,7 @@
         
 
       <br><br>
-      <h2 class="project-header">
+      <h2 id="headerChange3" class="project-header">
         Second iteration
         </h1>
         <hr class="line">
@@ -218,6 +228,6 @@
   </footer>
 
 </body>
-
+<script src="variousJS.js"></script>
 
 </html>

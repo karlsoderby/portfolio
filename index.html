@@ -13,12 +13,13 @@
       margin: 0;
       padding: 0;
       background-color: #f4da01;
-
+      transition: 0.2s;
     }
   </style>
+
 </head>
 
-<body>
+<body id="testColor">
   <div class="ui-wrap">
     <div class="ui">
 
@@ -31,12 +32,22 @@
           <a href="index.html">HOME</a>
           <a href="#">WORK</a>
           <a href="about.html">ABOUT</a>
+          
         </div>
       </div>
-
+      <button id="redRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#44a1b8', document.getElementById('testColor').style.color = 'white',changeWhite()">
+      </button>
+      <button id="blueRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#697775', document.getElementById('testColor').style.color = 'white',changeWhite()">
+      </button>
+      <button id="yellowRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#f4da01', document.getElementById('testColor').style.color = 'black',changeBlack()">
+      </button>
       <a href="about.html" class="right">ABOUT</a>
       <a href="#" class="right">WORK</a>
       <a href="index.html" class="right"><b>HOME</b></a>
+
     </div>
   </div>
   <div class="wrapper">
@@ -63,8 +74,8 @@
 
     <div class="project-hero" onclick="window.location.href='project-page.html'">
 
-      <h2>tiotta / thesis</h2>
-      <hr class="line">
+      <h2 id="testWhite1">tiotta / thesis</h2>
+      <hr id="line1" class="line">
       <br>
 
       <img src="img/tiotta_test.1.png" alt="Paris" width="100" height="200" class="img-color">
@@ -72,9 +83,9 @@
     </div>
 
 
-    <div class="project-hero-small">
-      <h2>the shed / founder</h2>
-      <hr class="line">
+    <div class="project-hero-small" onclick="window.location.href='project-shed.html'">
+      <h2 id="testWhite2">the shed / founder</h2>
+      <hr id="line2" class="line">
       <br>
 
       <img src="img/test_shed.png" alt="Paris" width="100" height="200" class="img-color">
@@ -87,8 +98,8 @@
     <div class="project-hero">
 
 
-      <h2>visual / design </h2>
-      <hr class="line">
+      <h2 id="testWhite3">visual / design </h2>
+      <hr id="line3" class="line">
       <br>
       <img src="img/test1.png" alt="Paris" width="100" height="200" class="img-color">
 
@@ -97,8 +108,8 @@
 
     <div class="project-hero-small" onclick="window.location.href='project-gadget.html'">
 
-      <h2>gadget / IOT</h2>
-      <hr class="line">
+      <h2 id="testWhite4">gadget / IOT</h2>
+      <hr class="line" id="line4">
       <br>
       <img src="img/test_plant.png" alt="Paris" width="100" height="200" class="img-color">
 
@@ -108,8 +119,8 @@
 
     <div class="project-hero">
 
-      <h2>yukon /<br> GAME DESIGN</h2>
-      <hr class="line">
+      <h2 id="testWhite5">yukon /<br> GAME DESIGN</h2>
+      <hr class="line" id="line5">
       <br>
       <img src="img/test2.png" alt="Paris" width="100" height="200" class="img-color">
 
@@ -118,8 +129,8 @@
 
     <div class="project-hero-small">
 
-      <h2>brunnshog /<br> service design</h2>
-      <hr class="line">
+      <h2 id="testWhite6">brunnshog /<br> service design</h2>
+      <hr class="line" id="line6">
       <br>
       <img src="img/test1.png" class="img-color">
 
@@ -145,5 +156,5 @@
 
 
 </body>
-
+<script src="variousJS.js"></script>
 </html>

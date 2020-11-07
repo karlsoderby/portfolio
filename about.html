@@ -16,6 +16,7 @@
     padding: 0;
     background-color: rgb(27, 26, 26);
     color: white;
+    transition: 0.2s;
   }
 
   .footer {
@@ -25,7 +26,7 @@
 
 </style>
 </head>
-<body>
+<body id="testColor">
 <div class="ui-wrap">
   <div class="ui">
 
@@ -40,6 +41,15 @@
         </div>
       </div>
 
+      <button id="redRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#44a1b8', document.getElementById('testColor').style.color = 'white',changeWhite()">
+      </button>
+      <button id="blueRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#697775', document.getElementById('testColor').style.color = 'white',changeWhite()">
+      </button>
+      <button id="yellowRound" class="right" type="button"
+      onclick="document.getElementById('testColor').style.backgroundColor = '#f4da01', document.getElementById('testColor').style.color = 'black',changeBlack()">
+      </button>
       <a href="about.html"class="right"><b>ABOUT</b></a>
       <a href="#" class="right">WORK</a>
       <a href="index.html" class="right">HOME</a>

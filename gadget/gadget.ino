@@ -58,7 +58,7 @@ void setup()
     strip.setBrightness(0); // Set BRIGHTNESS 
 
     //uncomment line below to run rest of program ONLY if Serial Monitor opens
-    //while(!Serial);
+    while(!Serial);
 
     if (!ENV.begin())
     {

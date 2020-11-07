@@ -356,3 +356,43 @@ h1 {
     margin-top: 70px;
   }
 }
+
+
+#redRound {
+  background-color: #44a1b8;
+  border: none;
+  margin-left: 10px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.2s;
+}
+
+#blueRound {
+  background-color: #697775;
+  border: none;
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.2s;
+}
+
+#yellowRound {
+  background-color: #f4da01;
+  border: none;
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.2s;
+}
+
+#yellowRound:hover, #blueRound:hover, #redRound {
+  cursor: pointer;
+  opacity: 0.8;
+} 
+
