@@ -29,8 +29,8 @@ The basic function is that when each button is pressed,
 
 Adafruit_NeoPixel strip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-char ssid[] = "The_Shed";            //  your network SSID (name) between the " "
-char pass[] = "ecamlndk";            // your network password between the " "
+char ssid[] = "";            //  your network SSID (name) between the " "
+char pass[] = "";            // your network password between the " "
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
 int status = WL_IDLE_STATUS; //connection status
 WiFiServer server(80);       //server socket
