@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML>
+<body>
+<head>
+    <link href="styles.css" rel='stylesheet'>
+    <link href="birdstyle.css" rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap' rel='stylesheet'>
+<style>
+    body{
+        margin: 3 rem auto;
+        max-width: 600;
+    }
+
+    .codebk {
+        background-color: rgb(37, 37, 37);
+        width: 1000px;
+        color: white;
+        padding: 20px;
+        
+    }
+</style>
+<script src='https://kit.fontawesome.com/0a4ce480d6.js'></script>
+</head>
+<div class="wrapper">
+<h1 onclick="window.location.href='birds.html'">Birduino</h1>
+<h3>Hum-hum 2.0</h3>
+
+<div class="bread-text-full">
+
+
+We love hummingbirds but they dont make much sound. According to researchers at Colombirdia and Harbird University, this is causing hummingbirds
+to feel depressed and can lead to chronic illnesses, such as bird fever and bird flu. We at Birduino took upon this challenge to
+create a tool for hummingbirds to express themselves beyond their silent dances. Several hummingbirds took part of this survey, some 
+choose to remain anonymous.
+
+<h3>
+The research
+</h3>
+
+The research began by interviewing several hummingbirds to gain a better view on the problem. Three hummingbirds agreed to have their name and 
+picture published. Below is a sample of an interview:
+<br><br>
+<b>Victor, 21 bird years old</b>
+<br><br>
+<b>Interviewer:</b> How does the silence and lack of sound production affect your day to day life?
+<br>
+<b>Victor:</b> *<i>Intense vibration caused by rapid wing movement.</i>*
+<br>
+<b>Interviewer:</b> And can you see a problem in this?
+<br>
+<b>Victor:</b> *<i>Craps on the floor and leaves</i>*<br>
+<b>Interviewer:</b> Thank you for your time.
+<br><br>
+Based on data collected from interviews, we needed to find a solution for hummingbirds to express themselves through sound.
+
+<h3>The solution</h3>
+
+The solution to this social hummingbird problem 
+
+<br>
+<br>
+<div class="codebk">
+<code>
+int BUZZER = 5;<br>
+int light_sensor = A0;<br>
+int sound_sensor = A1;<br>
+void setup()<br>
+{<br>
+  // put your setup code here, to run once:<br>
+  pinMode(BUZZER, OUTPUT);<br>
+}<br>
+void loop()<br>
+{<br>
+  int raw_light = analogRead(light_sensor); // read the raw value from light_sensor pin (A0)<br>
+  int light = map(raw_light, 0, 800, 0, 85); // map the value from 0, 1023 to 0, 100<br>
+  int soundValue = 0; //create variable to store many different readings<br>
+  for (int i = 0; i < 32; i++) //create a for loop to read<br>
+  {<br>
+    soundValue += analogRead(sound_sensor);   //read the sound sensor<br>
+  }<br>
+  soundValue >>= 5; //bitshift operation<br>
+  int sounds = map(soundValue, 0, 800, 0, 500);<br>
+  tone(BUZZER, light); //Set the voltage to high and makes a noise<br>
+  delay(sounds);//Waits for 1000 milliseconds<br>
+  noTone(BUZZER);//Sets the voltage to low and makes no noise<br>
+}<br>
+
+</code>
+</div>
+
+  </div>
+  <br><br>
+  <img src="img/bird_test.png" alt="Paris" width="583" height="389" >
+</div>
+
+    </body>
