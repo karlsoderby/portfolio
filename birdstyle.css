@@ -6,3 +6,7 @@ h1:hover {
 cursor: pointer;
 color: teal;
 }
+
+#project-hero-cool {
+    margin-bottom: 100px;   
+}
