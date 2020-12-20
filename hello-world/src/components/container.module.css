@@ -1,0 +1,64 @@
+.container {
+    margin: 3rem auto;
+    max-width: 600px;
+  }
+
+  .largebutton {
+      margin: 5px;
+      border: none;
+      height: 285px;
+      width: 285px;
+      background-color: #6ac4f8;
+     /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);*/
+      transition: all 0.2s;
+      outline: none;
+      float: left;
+  }
+
+  .largebutton:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #4158D0;
+   /*   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);*/
+
+  }
+
+  .linktest {
+    margin: 5px;
+    border: none;
+    height: 285px;
+    width: 285px;
+    background-color: #6ac4f8;
+   /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);*/
+    transition: all 0.2s;
+    outline: none;
+    float: left;
+  }
+
+  .linktest:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #4158D0;
+ /*   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);*/
+
+}
+
+.linktestGreen {
+    margin: 5px;
+    border: none;
+    height: 285px;
+    width: 285px;
+    background-color: #2ab95a;
+   /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);*/
+    transition: all 0.2s;
+    outline: none;
+    float: left;
+  }
+
+  .linktestGreen:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #4158D0;
+ /*   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);*/
+
+}
