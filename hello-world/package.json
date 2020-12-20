@@ -28,6 +28,8 @@
     "typography-theme-kirkham": "^0.16.19"
   },
   "devDependencies": {
+    "gh": "^2.8.9",
+    "pages": "0.0.16",
     "prettier": "2.1.2"
   },
   "repository": {
