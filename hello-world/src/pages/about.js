@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Layout from "../components/layout"
+import Largebutton from "../components/button"
+import containerStyles from "../components/container.module.css"
 
 import './App.css';
 
@@ -39,14 +42,14 @@ class MarkdownViewer extends Component {
     const { urlGitHubFile, content } = this.state;
 
     return (
+      <Layout>
       <div>
-         <h3> Fetched from: </h3> { urlGitHubFile }
-         
-	 <hr />
+       
 	 <p>
 	    <ReactMarkdown source={content} />
 	 </p>
       </div>
+      </Layout>
   )};
     
 }
