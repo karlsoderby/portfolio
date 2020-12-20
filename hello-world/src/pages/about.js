@@ -1,15 +1,55 @@
-import React from "react"
-import Layout from "../components/layout"
+import React, { Component } from 'react';
 
-export default function About() {
+import './App.css';
+
+import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
+
+function App() {
   return (
-      <Layout>
-    <div>
-      <h1>About me</h1>
-      <p>
-        I’m good enough, I’m smart enough, and gosh darn it, people like me!
-      </p>
+    <div className="App">
+      <MarkdownViewer />
     </div>
-    </Layout>
-  )
+  );
 }
+
+class MarkdownViewer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+       content: null,
+       urlGitHubFile: "https://karlsoderby.github.io/portfolio/hello-world/docs/walkthrough.md"
+    };
+  }
+
+  componentDidMount() {
+    
+    axios.get(this.state.urlGitHubFile)
+    .then(response => {
+       console.log("Success in fetching the file from " + this.state.urlGitHubFile);
+       this.setState({ content: response.data });
+    })
+    .catch(error => {
+       console.err("Error in fetching the file from " + this.state.urlGitHubFile);
+    });
+  }
+
+  render() {
+    const { urlGitHubFile, content } = this.state;
+
+    return (
+      <div>
+         <h3> Fetched from: </h3> { urlGitHubFile }
+         
+	 <hr />
+	 <p>
+	    <ReactMarkdown source={content} />
+	 </p>
+      </div>
+  )};
+    
+}
+
+
+export default App;
