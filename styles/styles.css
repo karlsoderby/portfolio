@@ -401,6 +401,21 @@ h1 {
   color: white;
 }
 
+.grid-container-article {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+
+.grid-item-article {
+  transition: all 0.2s;
+  
+  margin-right: 100px;
+  color: white;
+  font-size: 1.3rem;
+}
+
 .grid-tag {
   display: inline;
   margin-right: 10px;
@@ -462,6 +477,17 @@ h1 {
     margin-top: 50px;
     display: grid;
     grid-template-columns: auto;
+  }
+
+  .grid-container-article {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .grid-item-article {
+    margin: 0px auto;
+    margin-top: 50px;
   }
 
 }
