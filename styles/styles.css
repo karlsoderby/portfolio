@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -42,12 +44,16 @@ h1 {
 
 h3 {
   font-size: 2rem;
-  font-family: 'Barlow', sans-serif;
+  /*font-family: 'Barlow', sans-serif;*/
+  font-family: 'Share Tech', sans-serif;
   font-weight: normal;
   
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 }
+
+
+
 .project-section {
   margin-top: 50px;
   width: 90%;
@@ -401,6 +407,34 @@ h1 {
   color: white;
 }
 
+.grid-container-article {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+
+.grid-item-article {
+  transition: all 0.2s;
+  
+  margin-right: 100px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.grid-item-article-full {
+  transition: all 0.2s;
+  
+  
+  color: white;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.grid-item-image {
+  padding-top: 50px;
+}
+
 .grid-tag {
   display: inline;
   margin-right: 10px;
@@ -428,7 +462,20 @@ h1 {
   /*box-shadow: 0 0 0 1px 	#2B2929*/
 }
 
+.grid-article-h3 {
+  font-size: 3rem;
+  /*font-family: 'Barlow', sans-serif;*/
+  font-family: 'Share Tech', sans-serif;
+  font-weight: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
 
+.grid-item-intro {
+  font-size: 2rem;
+  letter-spacing: 4px;
+  
+}
 
 
 
@@ -464,5 +511,26 @@ h1 {
     grid-template-columns: auto;
   }
 
+  .grid-container-article {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .grid-item-article {
+    margin: 0px auto;
+    margin-top: 50px;
+  }
+
 }
+
+
+.prettyprint {
+  height: 500px;
+  background-color: black;
+  font-size: 14px;
+}
+
+
+
 
